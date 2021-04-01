@@ -1,69 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, itintial-scale=1.0" />
-    <title>森野のポートフォリオ</title>
-    <link rel="icon" href="map.png">
-    <meta name="description" content="森野のポートフォリオサイトです。">
-    <link rel="stylesheet" href="css/styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joker</title>
+    <style>
+        body {
+            background: #eee;
+        }
+        canvas {
+            width: 60vw;
+        }
+        #canvas {
+            width: 60vw;
+            margin: auto;
+        }
+        button,input,a {
+            display: block;
+            width: 40vw;
+            height: 60px;
+            margin: 10px auto;
+        }
+        input {
+            width: 25vh;
+            height: 40px;
+        }
+    
+        #explain {
+            margin-top: 100px;
+            max-width: 500px;
+            margin: 50px auto;
+        }
+        #each {
+            border-bottom: 2px solid skyblue;
+        }
+        #title {
+            font-size: 2rem;
+            width: 10rem;
+            background: skyblue;
+        }
 
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <div class="icon">
-          <img src="img/monster.png" width="120" height="120" alt="モンスターのアイコンです">
-        </div>
-        <div class="info">
-          <h1>森野琢水</h1>
-          <p>プログラミング初心者です</p>
-          <ul>
-            <li>
-              <a href="https://dotinstall.com" target="_brank">
-                <img src="img/boss.png" width="20" height="20" alt="ブログサイトへのリンク画像です">
-              </a>
-            </li>
-            <li>
-              <a href="https://dotinstall.com" target="_brank">
-                <img src="img/boss.png" width="20" height="20" alt="ブログサイトへのリンク画像です">
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-
-    <section>
-      <div class="pic">
-        <img src="img/screen.png" width: 200px; height="200px">
-      </div>
-      <div class="desc">
-        <h1>RPG</h1>
-        <p>RPGができます。RPGができます。RPGができます。RPGができます。RPGができます。</p>
-      </div>
-    </section>
-    <section>
-      <div class="pic">
-        <img src="img/monster.png">
-      </div>
-      <div class="desc">
-        <p>こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。</p>
-      </div>
-    </section>
-    <section>
-      <div class="pic">
-        <img src="img/monster.png">
-      </div>
-      <div class="desc">
-        <p>こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。こんにちわ。</p>
-      </div>
+        @media (max-width: 1000px) {
+            #canvas {
+                width: 100vw;
+            }
+            canvas {
+                width: 100vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="canvas">
+        <canvas width="800" height="500">
+            Canvas not supported.
+        </canvas>
     </section>
 
-    <footer>
-      <p>(c) morimorimoriiii.com</p>
-    </footer>
-  </body>
+    <!-- ボタン配置 -->
+    <div>
+        <button id='start'>start</button>
+    </div>
 
+    <section id="explain">
+        <section id="title">
+            ルール説明
+        </section>
+        <section>
+            <p>3人はそれぞれ違う役職を割り振られます。</p>
+            <p>それぞれの役職にはそれぞれの目的があります。</p>
+            <p>他の二人をうまく騙して1位を目指しましょう！</p>   
+        </section>
+        <section>
+            <section id="each">それぞれの役職の説明</section>
+        <ul>
+                <li>
+                    Normal
+                    <p>ふつうのひと、誰がJokerか見極めてJokerに投票しよう</p>
+                    <p>投票された数がJokerより少なければJokerに勝つ</p>
+                    <p>1票投票できる</p>
+                </li>
+                <li>
+                    Joker
+                    <p>うそつき、Jokerであることをバレないようにしよう</p>
+                    <p>投票された数がNormalより少なければNormalに勝つ</p>
+                    <p>1票投票できる</p>
+                </li>
+                <li>
+                    Ace
+                    <p>特殊なひと、Jokerだと思われて投票されよう</p>
+                    <p>0票投票されたら3位</p>
+                    <p>1票投票されたら2位</p>
+                    <p>2票投票されたら1位</p>
+                    <p>0.5票しか投票できない</p>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <footer>all rights reserved takumi morino</footer>
+    
+
+    <script src="main.js"></script>
+</body>
 </html>
-  
